@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tedme\\Documents\\SI\\periodo_8\\.net\\projeto_P1\\projeto_P1.csproj": {}
+    "C:\\Users\\tedme\\Documents\\SI\\periodo_8\\.net\\StockPortfolio\\projeto_P1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tedme\\Documents\\SI\\periodo_8\\.net\\projeto_P1\\projeto_P1.csproj": {
+    "C:\\Users\\tedme\\Documents\\SI\\periodo_8\\.net\\StockPortfolio\\projeto_P1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tedme\\Documents\\SI\\periodo_8\\.net\\projeto_P1\\projeto_P1.csproj",
+        "projectUniqueName": "C:\\Users\\tedme\\Documents\\SI\\periodo_8\\.net\\StockPortfolio\\projeto_P1.csproj",
         "projectName": "projeto_P1",
-        "projectPath": "C:\\Users\\tedme\\Documents\\SI\\periodo_8\\.net\\projeto_P1\\projeto_P1.csproj",
+        "projectPath": "C:\\Users\\tedme\\Documents\\SI\\periodo_8\\.net\\StockPortfolio\\projeto_P1.csproj",
         "packagesPath": "C:\\Users\\tedme\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tedme\\Documents\\SI\\periodo_8\\.net\\projeto_P1\\obj\\",
+        "outputPath": "C:\\Users\\tedme\\Documents\\SI\\periodo_8\\.net\\StockPortfolio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tedme\\AppData\\Roaming\\NuGet\\NuGet.Config"

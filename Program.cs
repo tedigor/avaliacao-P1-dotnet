@@ -26,11 +26,11 @@ namespace projeto_P1
         private static void ShowMenu()
         {
             Console.Clear();
-            Console.WriteLine("##### Bem vindo à União Investimentos #####");
+            Console.WriteLine("Bem-vindo à Trabson Invest! escolha uma opção: ");
             Console.WriteLine("");
-            Console.WriteLine("1 - Cadastrar ação");
-            Console.WriteLine("2 - Pesquisar ação");
-            Console.WriteLine("3 - Visualizar carteira de ações");
+            Console.WriteLine("1 - Comprar uma ação");
+            Console.WriteLine("2 - Pesquisar por uma ação");
+            Console.WriteLine("3 - Visualizar sua carteira de ações");
             Console.WriteLine("0 - Sair");
         }
 
@@ -42,57 +42,60 @@ namespace projeto_P1
             {
                 case 1:
                     {
-                        RegisterAction();
+                        RegisterStock();
                     }
                     break;
                 case 2:
                     {
-                        ShowAction();
+                        ShowStock();
                     }
                     break;
                 case 3:
                     {
-                        ShowAllActions();
+                        ShowAllStocks();
+                    }
+                    break;
+                default:
+                    {
+                        Console.WriteLine("Opção não existente, tente novamente!");
                     }
                     break;
             }
         }
         
-        private static void RegisterAction() 
+        private static void RegisterStock() 
         {
             Console.Write("Digite o código da ação: ");
-            string actionCode = Console.ReadLine().ToUpper();
+            string stockCode = Console.ReadLine().ToUpper();
             Console.Write("Digite a quantidade de ações que deseja comprar: ");
-            int actionAmount = int.Parse(Console.ReadLine());
+            int stockAmount = int.Parse(Console.ReadLine());
 
-            wallet.AddAction(actionCode, actionAmount);
+            wallet.AddStock(stockCode, stockAmount);
 
             Console.WriteLine("Ação cadastrada com sucesso!");
         }
 
-        private static void ShowAction() 
+        private static void ShowStock() 
         {
             try
             {
               Console.Write("Digite o código da ação: ");
-              string actionCode = Console.ReadLine().ToUpper();  
-              wallet.ShowActionDetails(actionCode);
+              string stockCode = Console.ReadLine().ToUpper();  
+              wallet.ShowStockDetails(stockCode);
             }
-            catch (SearchActionException err)
+            catch (SearchStockException err)
             {
                 Console.WriteLine(err.Message);
             } 
             catch
             {
-                Console.WriteLine("Ocorreu um erro ao cadastrar a ação!");
+                Console.WriteLine("Ocorreu um erro ao pesquisar a ação, Tente novamente");
             }
         }
 
-        private static void ShowAllActions() 
+        private static void ShowAllStocks() 
         {
-            wallet.ShowAllActionsDetails();
+            wallet.ShowAllStocksDetails();
         }
-
-
     }
 }

@@ -6,54 +6,61 @@ namespace projeto_P1.model
 {
     public class Wallet
     {
-        private List<Action> actions;
+        private List<Stock> stocks;
 
         public Wallet()
         {
-            this.actions = new List<Action>();
+            this.stocks = new List<Stock>();
         }
 
-        public void AddAction(string code, int amount) {
-            Action action = GetActionByCode(code); 
-            if ( action != null)
+        public void AddStock(string code, int amount) {
+            Stock stock = GetStockByCode(code); 
+            if ( stock != null)
             {
-                action.IncrementAmount(amount);
+                stock.IncrementAmount(amount);
             } else 
             {
-                this.actions.Add(new Action(code, amount));
+                this.stocks.Add(new Stock(code, amount));
             }
         }
 
-        private Action GetActionByCode(string code) 
+        private Stock GetStockByCode(string code) 
         {
             try
             {
-                return this.actions.Find(a => a.GetCode().Equals(code));    
+                return this.stocks.Find(a => a.Code.Equals(code));    
             }
             catch (System.Exception)
             {  
-                throw new SearchActionException($"A ação {code} não está cadastrada na carteira!");
+                throw new SearchStockException($"A ação {code} não está cadastrada na carteira!");
             }
         }
 
-        public void ShowActionDetails(string code) 
+        public void ShowStockDetails(string code) 
         {
             try
             {
-                Action action = GetActionByCode(code); 
-                Console.WriteLine($"Código da Ação: {action.GetCode()} Quantidade: {action.GetAmount()}");
+                Stock action = GetStockByCode(code); 
+                Console.WriteLine($"Código da Ação: {action.Code} Quantidade: {action.Amount}");
             }
             catch (System.Exception)
             {
-                throw new SearchActionException($"A ação {code} não está cadastrada na carteira!");
+                throw new SearchStockException($"A ação {code} não está cadastrada na carteira!");
             }
         }
 
-        public void ShowAllActionsDetails() 
-        {
-            foreach (var action in actions)
+        public void ShowAllStocksDetails() 
+        {   
+            if (stocks.Count == 0)
             {
-                Console.WriteLine($"Código da Ação: {action.GetCode()} Quantidade: {action.GetAmount()}");
+                Console.WriteLine("A carteira não possui ações, cadastre uma ação para visualizar!");
+            }
+            else
+            {
+                foreach (var action in stocks)
+                {
+                    Console.WriteLine($"Código da Ação: {action.Code} Quantidade: {action.Amount}");  
+                }
             }
         }
 
